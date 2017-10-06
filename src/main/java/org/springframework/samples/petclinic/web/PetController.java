@@ -74,6 +74,13 @@ public class PetController {
         return "pets/findPets";
     }
     
+    @RequestMapping(value = "/pets/types", method = RequestMethod.GET)
+    public String getPetTypes(Map<String, Object> model) {
+        Collection<PetType> results = this.clinicService.findPetTypes();
+        model.put("petTypes", results);
+        return "pets/petsTypes";
+    }
+    
     @RequestMapping(value = "/pets", method = RequestMethod.GET)
     public String processFindForm(Pet pet, BindingResult result, Map<String, Object> model) {
         Collection<Pet> results = this.clinicService.findPetByNameTypeBreed(pet);
