@@ -61,3 +61,5 @@ INSERT INTO visits VALUES (3, 8, 2, '2013-01-03', 'neutered','','');
 INSERT INTO visits VALUES (4, 7, 2, '2013-01-04', 'spayed','','');
 INSERT INTO visits VALUES (5, 1, 2, '2013-01-05', 'red, itchy eyes','allergy','Antihistamines');
 INSERT INTO visits VALUES (6, 2, 1, '2013-01-06', 'Abdomen, enlarged or swollen','Gastrointestinal obstruction','A lot of food and fluid');
+
+INSERT INTO clinic VALUES (1, 'PioPi0', 'Avda. del pato, 2','B12313123');
