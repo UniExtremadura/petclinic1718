@@ -41,6 +41,8 @@ public interface VisitRepository {
      * @see BaseEntity#isNew
      */
     void save(Visit visit) throws DataAccessException;
+    
+    void delete(int visitId) throws DataAccessException;
 
     public List<Visit> findByPetId(Integer petId);
     
