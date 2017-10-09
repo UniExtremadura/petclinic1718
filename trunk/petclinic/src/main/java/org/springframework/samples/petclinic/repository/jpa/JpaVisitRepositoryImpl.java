@@ -54,6 +54,12 @@ public class JpaVisitRepositoryImpl implements VisitRepository {
     		this.em.merge(visit);    
     	}
     }
+    
+    @Override
+    public void delete (int visitId) {
+    	Query query = em.createQuery( "DELETE FROM Visit v WHERE v.id = :id");
+    	query.setParameter("id", visitId).executeUpdate();
+    }
 
 
     @Override

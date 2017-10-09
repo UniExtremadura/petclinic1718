@@ -103,6 +103,13 @@
                         <spring:param name="petId" value="${visit.pet.id}"/>
                     </spring:url>
                     <a href="${fn:escapeXml(newVisitURL)}" class="btn btn-default">Create New Visit</a>
+                    
+                    <spring:url value="/owners/{ownerId}/pets/{petId}/visits/{visitId}/delete" var="delVisitURL" >
+                        <spring:param name="ownerId" value="${visit.pet.owner.id}"/>
+                        <spring:param name="petId" value="${visit.pet.id}"/>
+                        <spring:param name="visitId" value="${visit.id}"/>
+                    </spring:url>       
+                    <a href="${fn:escapeXml(delVisitURL)}" class="btn btn-default">Delete Visit</a>
 			                    
                 </c:otherwise>
             </c:choose>

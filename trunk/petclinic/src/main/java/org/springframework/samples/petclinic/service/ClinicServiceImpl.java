@@ -110,6 +110,12 @@ public class ClinicServiceImpl implements ClinicService {
 	public void saveVisit(Visit visit) throws DataAccessException {
 		visitRepository.save(visit);
 	}
+	
+	@Override
+	@Transactional
+	public void deleteVisit(int visitId) throws DataAccessException {
+		visitRepository.delete(visitId);
+	}
 
 	@Override
 	@Transactional(readOnly = true)

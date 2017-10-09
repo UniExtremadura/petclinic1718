@@ -46,6 +46,8 @@ public interface ClinicService {
     public void savePet(Pet pet) throws DataAccessException;
 
     public void saveVisit(Visit visit) throws DataAccessException;
+    
+    public void deleteVisit(int visitId) throws DataAccessException;
 
     public Collection<Vet> findVets() throws DataAccessException;
 

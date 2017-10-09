@@ -86,6 +86,13 @@ public class VisitController {
         }
     }
     
+    @RequestMapping(value = "/owners/{ownerId}/pets/{petId}/visits/{visitId}/delete", method = RequestMethod.GET)
+    public String processDeleteVisitForm(@PathVariable("visitId") int visitId, Map<String, Object> model) {      
+        this.clinicService.deleteVisit(visitId);
+        return "redirect:/owners/{ownerId}";
+   
+    }
+    
 
     @RequestMapping(value = "/owners/*/pets/{petId}/visits/filter", method = RequestMethod.GET)
     public String initNewVisitFilter(@PathVariable("petId") int petId, Map<String, Object> model) {
