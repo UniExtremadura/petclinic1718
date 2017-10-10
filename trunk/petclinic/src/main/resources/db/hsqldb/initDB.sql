@@ -53,13 +53,19 @@ CREATE TABLE owners (
 );
 CREATE INDEX owners_last_name ON owners (last_name);
 
+CREATE TABLE character (
+  id   INTEGER IDENTITY PRIMARY KEY,
+  name VARCHAR(80)
+);
+CREATE INDEX character_name ON types (name);
+
 CREATE TABLE pets (
   id         INTEGER IDENTITY PRIMARY KEY,
   name       VARCHAR(30),
   birth_date DATE,
   weight	 FLOAT NOT NULL,
   comments   VARCHAR(200),
-  character  VARCHAR(30),
+  character_id  INTEGER NOT NULL,
   allergies  VARCHAR (200),
   type_id    INTEGER NOT NULL,
   owner_id   INTEGER NOT NULL,
@@ -68,6 +74,7 @@ CREATE TABLE pets (
 ALTER TABLE pets ADD CONSTRAINT fk_pets_owners FOREIGN KEY (owner_id) REFERENCES owners (id);
 ALTER TABLE pets ADD CONSTRAINT fk_pets_breeds FOREIGN KEY (breed_id) REFERENCES breeds (id);
 ALTER TABLE pets ADD CONSTRAINT fk_pets_types FOREIGN KEY (type_id) REFERENCES types (id);
+ALTER TABLE pets ADD CONSTRAINT fk_pets_character FOREIGN KEY (character_id) REFERENCES character (id);
 CREATE INDEX pets_name ON pets (name);
 
 CREATE TABLE visits (

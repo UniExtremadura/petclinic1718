@@ -26,6 +26,7 @@ import org.springframework.samples.petclinic.model.Clinic;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetBreed;
+import org.springframework.samples.petclinic.model.PetCharacter;
 import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
@@ -79,6 +80,12 @@ public class ClinicServiceImpl implements ClinicService {
 	@Transactional(readOnly = true)
 	public Collection<PetType> findPetTypes() throws DataAccessException {
 		return petRepository.findPetTypes();
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Collection<PetCharacter> findPetCharacters() throws DataAccessException {
+		return petRepository.findPetCharacters();
 	}
 
 	@Override

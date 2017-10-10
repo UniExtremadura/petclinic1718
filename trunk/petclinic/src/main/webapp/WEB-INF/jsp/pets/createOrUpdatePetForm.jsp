@@ -17,22 +17,14 @@
     });
 </script>
 <div class="container">
-    <jsp:include page="../fragments/bodyHeader.jsp"/>
-    <c:choose>
-        <c:when test="${pet['new']}">
-            <c:set var="method" value="post"/>
-        </c:when>
-        <c:otherwise>
-            <c:set var="method" value="put"/>
-        </c:otherwise>
-    </c:choose>
+    <jsp:include page="../fragments/bodyHeader.jsp"/>    
 
     <h2>
         <c:if test="${pet['new']}">New </c:if>
         Pet
     </h2>
 
-    <form:form modelAttribute="pet" method="${method}"
+    <form:form modelAttribute="pet" method="post"
                class="form-horizontal">
         <div class="control-group" id="owner">
             <label class="control-label">Owner </label>
@@ -65,7 +57,7 @@
         		<petclinic:inputField label="Allergies" name="allergies"/>
 		    </div>
 		    <div style="float:right; width:50%;">
-		        <petclinic:selectField label="Character" name="character" size="1" names="${characterTypes}"/>
+		        <petclinic:selectField label="Character" name="character" size="1" names="${characters}"/>
 		        <petclinic:selectField name="type" label="Type" names="${types}" size="5"/>		        	        
 		        <petclinic:selectField name="breed" label="Breed" names="${breeds}" size="1"/>		        
 		    </div>

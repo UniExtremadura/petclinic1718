@@ -22,6 +22,7 @@ import org.springframework.samples.petclinic.model.Clinic;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetBreed;
+import org.springframework.samples.petclinic.model.PetCharacter;
 import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
@@ -36,6 +37,8 @@ import org.springframework.samples.petclinic.model.Visit;
 public interface ClinicService {
 
     public Collection<PetType> findPetTypes() throws DataAccessException;
+    
+    public Collection<PetCharacter> findPetCharacters() throws DataAccessException;
     
     public Collection<PetBreed> findPetBreeds() throws DataAccessException;
 

@@ -15,7 +15,6 @@
  */
 package org.springframework.samples.petclinic.web;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
 
@@ -23,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetBreed;
+import org.springframework.samples.petclinic.model.PetCharacter;
 import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.stereotype.Controller;
@@ -62,6 +62,11 @@ public class PetController {
     public Collection<PetBreed> populatePetBreeds() {
         return this.clinicService.findPetBreeds();
     }
+    
+    @ModelAttribute("characters")
+    public Collection<PetCharacter> populatePetCharacters() {
+        return this.clinicService.findPetCharacters();
+    }
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
@@ -94,7 +99,6 @@ public class PetController {
         Pet pet = new Pet();
         owner.addPet(pet);
         model.put("pet", pet);
-        model.put("characterTypes", Arrays.asList("Calm","Nervous", "Aggressive"));
         return "pets/createOrUpdatePetForm";
     }
 
@@ -114,7 +118,6 @@ public class PetController {
     public String initUpdateForm(@PathVariable("petId") int petId, Map<String, Object> model) {
         Pet pet = this.clinicService.findPetById(petId);
         model.put("pet", pet);
-        model.put("characterTypes", Arrays.asList("Calm","Nervous", "Aggressive"));
         return "pets/createOrUpdatePetForm";
     }
 
