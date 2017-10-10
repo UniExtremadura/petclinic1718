@@ -54,7 +54,16 @@
 		                <span class="help-inline"><form:errors path="comments"/></span>
 		            </div>
 		        </div>
-        		<petclinic:inputField label="Allergies" name="allergies"/>
+		        
+		        <div class="control-group">
+		            <label class="control-label">Allergies</label>
+		
+		            <div class="controls">
+		                <form:textarea rows="4"  path="allergies"  style="width:60%;"/>
+		                <span class="help-inline"><form:errors path="allergies"/></span>
+		            </div>
+		        </div>
+		        
 		    </div>
 		    <div style="float:right; width:50%;">
 		        <petclinic:selectField label="Character" name="character" size="1" names="${characters}"/>
