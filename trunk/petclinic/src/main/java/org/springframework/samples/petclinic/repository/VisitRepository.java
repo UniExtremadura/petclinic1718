@@ -49,5 +49,7 @@ public interface VisitRepository {
     public Visit findById(Integer id);
 
 	public Collection<Visit> findVisitsByDate(Integer petId, DateTime start, DateTime end);
+	
+	public Collection<Visit> findVisits(Visit vist);
 
 }

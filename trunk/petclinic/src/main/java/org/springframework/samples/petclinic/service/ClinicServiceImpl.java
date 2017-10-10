@@ -195,5 +195,10 @@ public class ClinicServiceImpl implements ClinicService {
 		DateTime dtEnd = formatter.parseDateTime(end);
 		return visitRepository.findVisitsByDate(petId, dtStart, dtEnd);
 	}
+	
+	@Override
+	public Collection<Visit> findVisits (Visit visit) {
+		return visitRepository.findVisits(visit);
+	}
 
 }

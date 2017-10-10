@@ -86,5 +86,13 @@ public class JpaVisitRepositoryImpl implements VisitRepository {
         query.setParameter("end", end);
         return query.getResultList();
 	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public Collection<Visit> findVisits(Visit visit) {
+		Query query = this.em.createQuery("SELECT v FROM Visit v where v.date=:date");
+        query.setParameter("date", visit.getDate());
+        return  query.getResultList();
+	}
 
 }
