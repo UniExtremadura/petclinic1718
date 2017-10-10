@@ -41,19 +41,23 @@ INSERT INTO breeds VALUES (5, 'Pekingese');
 INSERT INTO breeds VALUES (6, 'Harrier');
 INSERT INTO breeds VALUES (7, 'Basenji');
 
-INSERT INTO pets VALUES (1, 'Leo', '2010-09-07', 10, 'Very nice pet', 'Calm', 'insect bite', 1, 1, 2);
-INSERT INTO pets VALUES (2, 'Basil', '2012-08-06', 10, 'Very nice pet', 'Nervous', 'sunflower seeds', 6, 2, 1);
-INSERT INTO pets VALUES (3, 'Rosy', '2011-04-17', 10, 'Very nice pet', 'Aggressive', '', 2, 3, 6);
-INSERT INTO pets VALUES (4, 'Jewel', '2010-03-07', 10, 'Very nice pet', 'Calm', '', 2, 3, 5);
-INSERT INTO pets VALUES (5, 'Iggy', '2010-11-30', 10, 'Very nice pet', 'Nervous', '', 3, 4, 1);
-INSERT INTO pets VALUES (6, 'George', '2010-01-20', 10, 'Very nice pet', 'Aggressive', 'eggs', 4, 5, 1);
-INSERT INTO pets VALUES (7, 'Samantha', '2012-09-04', 10, 'Very nice pet', 'Calm', '', 1, 6, 3);
-INSERT INTO pets VALUES (8, 'Max', '2012-09-04', 10, 'Very nice pet', 'Nervous', '', 1, 6, 4);
-INSERT INTO pets VALUES (9, 'Lucky', '2011-08-06', 10, 'Very nice pet', 'Aggressive', '', 5, 7, 5);
-INSERT INTO pets VALUES (10, 'Mulligan', '2007-02-24', 10, 'Very nice pet', 'Calm', 'lamb, eggs', 2, 8, 7);
-INSERT INTO pets VALUES (11, 'Freddy', '2010-03-09', 10, 'Very nice pet', 'Nervous', '', 5, 9, 1);
-INSERT INTO pets VALUES (12, 'Lucky', '2010-06-24', 10, 'Very nice pet', 'Aggressive', '', 2, 10, 6);
-INSERT INTO pets VALUES (13, 'Sly', '2012-06-08', 10, 'Very nice pet', 'Calm', '', 1, 10, 3);
+INSERT INTO character VALUES (1, 'Calm');
+INSERT INTO character VALUES (2, 'Nervous');
+INSERT INTO character VALUES (3, 'Aggressive');
+
+INSERT INTO pets VALUES (1, 'Leo', '2010-09-07', 10, 'Very nice pet', 1, 'insect bite', 1, 1, 2);
+INSERT INTO pets VALUES (2, 'Basil', '2012-08-06', 10, 'Very nice pet', 2, 'sunflower seeds', 6, 2, 1);
+INSERT INTO pets VALUES (3, 'Rosy', '2011-04-17', 10, 'Very nice pet', 3, '', 2, 3, 6);
+INSERT INTO pets VALUES (4, 'Jewel', '2010-03-07', 10, 'Very nice pet', 1, '', 2, 3, 5);
+INSERT INTO pets VALUES (5, 'Iggy', '2010-11-30', 10, 'Very nice pet', 2, '', 3, 4, 1);
+INSERT INTO pets VALUES (6, 'George', '2010-01-20', 10, 'Very nice pet', 3, 'eggs', 4, 5, 1);
+INSERT INTO pets VALUES (7, 'Samantha', '2012-09-04', 10, 'Very nice pet', 1, '', 1, 6, 3);
+INSERT INTO pets VALUES (8, 'Max', '2012-09-04', 10, 'Very nice pet', 2, '', 1, 6, 4);
+INSERT INTO pets VALUES (9, 'Lucky', '2011-08-06', 10, 'Very nice pet', 3, '', 5, 7, 5);
+INSERT INTO pets VALUES (10, 'Mulligan', '2007-02-24', 10, 'Very nice pet', 1, 'lamb, eggs', 2, 8, 7);
+INSERT INTO pets VALUES (11, 'Freddy', '2010-03-09', 10, 'Very nice pet', 2, '', 5, 9, 1);
+INSERT INTO pets VALUES (12, 'Lucky', '2010-06-24', 10, 'Very nice pet', 3, '', 2, 10, 6);
+INSERT INTO pets VALUES (13, 'Sly', '2012-06-08', 10, 'Very nice pet', 1, '', 1, 10, 3);
 
 INSERT INTO visits VALUES (1, 7, 1, '2013-01-01', 'rabies shot','','');
 INSERT INTO visits VALUES (2, 8, 1, '2013-01-02', 'rabies shot','','');

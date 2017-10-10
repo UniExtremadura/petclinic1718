@@ -41,7 +41,8 @@
             <set>
                 <bean class="org.springframework.samples.petclinic.web.PetTypeFormatter"/>
                 <bean class="org.springframework.samples.petclinic.web.PetBreedFormatter"/>
-                <bean class="org.springframework.samples.petclinic.web.VetFormatter"/>                
+                <bean class="org.springframework.samples.petclinic.web.VetFormatter"/>
+                <bean class="org.springframework.samples.petclinic.web.PetCharacterFormatter"/>                 
             </set>
         </property>
     </bean>

@@ -24,6 +24,7 @@ import javax.persistence.Query;
 
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetBreed;
+import org.springframework.samples.petclinic.model.PetCharacter;
 import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.repository.PetRepository;
 import org.springframework.stereotype.Repository;
@@ -47,6 +48,12 @@ public class JpaPetRepositoryImpl implements PetRepository {
     @SuppressWarnings("unchecked")
     public List<PetType> findPetTypes() {
         return this.em.createQuery("SELECT ptype FROM PetType ptype ORDER BY ptype.name").getResultList();
+    }
+    
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<PetCharacter> findPetCharacters() {
+        return this.em.createQuery("SELECT c FROM PetCharacter c ORDER BY c.name").getResultList();
     }
 
     

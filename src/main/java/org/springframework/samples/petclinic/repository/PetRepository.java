@@ -22,6 +22,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.BaseEntity;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetBreed;
+import org.springframework.samples.petclinic.model.PetCharacter;
 import org.springframework.samples.petclinic.model.PetType;
 
 /**
@@ -32,7 +33,7 @@ import org.springframework.samples.petclinic.model.PetType;
  * @author Juergen Hoeller
  * @author Sam Brannen
  * @author Michael Isvy
- * @author Javier Berrocal
+ * @author Software Project Manager
  */
 public interface PetRepository {
 
@@ -42,6 +43,13 @@ public interface PetRepository {
      * @return a <code>Collection</code> of <code>PetType</code>s
      */
     List<PetType> findPetTypes() throws DataAccessException;
+    
+    /**
+     * Retrieve all <code>PetCharacter</code>s from the data store.
+     *
+     * @return a <code>Collection</code> of <code>PetCharacter</code>s
+     */
+    List<PetCharacter> findPetCharacters() throws DataAccessException;
 
     /**
      * Retrieve a <code>Pet</code> from the data store by id.

@@ -69,8 +69,9 @@ public class Pet extends NamedEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.EAGER)
     private Set<Visit> visits;
     
-    @Column(name = "character")
-    private String character;
+    @ManyToOne
+    @JoinColumn(name = "character_id")
+    private PetCharacter character;
     
     @Column(name = "allergies")
     private String allergies;
@@ -79,7 +80,15 @@ public class Pet extends NamedEntity {
     @JoinColumn(name = "breed_id")
     private PetBreed breed;
     
-        
+
+    public PetCharacter getCharacter() {
+		return character;
+	}
+
+	public void setCharacter(PetCharacter character) {
+		this.character = character;
+	}
+	
     public String getAllergies() {
 		return allergies;
 	}
@@ -96,14 +105,6 @@ public class Pet extends NamedEntity {
 		this.breed = breed;
 	}
 	
-    public String getCharacter() {
-		return character;
-	}
-
-	public void setCharacter(String character) {
-		this.character = character;
-	}
-
 	public void setBirthDate(DateTime birthDate) {
         this.birthDate = birthDate;
     }
