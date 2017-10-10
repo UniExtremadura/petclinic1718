@@ -76,6 +76,8 @@ public interface ClinicService {
 	
 	public Collection<Visit> findVisitsByDate(Integer petId, String start, String end);
 	
+	public Collection<Visit> findVisits(Visit visit);
+	
 	public void saveClinic(Clinic clinic) throws DataAccessException;
 	
 	public Clinic getClinicInfo() throws DataAccessException;

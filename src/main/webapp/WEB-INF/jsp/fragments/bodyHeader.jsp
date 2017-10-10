@@ -4,7 +4,7 @@
 <spring:url value="/resources/images/banner-graphic.png" var="banner"/>
 <img src="${banner}" style="width: 866px;"/>
 
-<div class="navbar" style="width: 836px;">
+<div class="navbar" style="width: 936px;">
     <div class="navbar-inner">
         <ul class="nav">
             <li style="width: 90px;"><a href="<spring:url value="/" htmlEscape="true" />"><i class="icon-home"></i>
@@ -13,6 +13,8 @@
                     class="icon-search"></i> Find owners</a></li>
             <li style="width: 120px;"><a href="<spring:url value="/pets/find.html" htmlEscape="true" />"><i
                     class="icon-search"></i> Find pets</a></li>
+            <li style="width: 90px;"><a href="<spring:url value="/pets/visits/find.html" htmlEscape="true" />"><i
+                    class="icon-search"></i> Visits</a></li>
             <li style="width: 135px;"><a href="<spring:url value="/vets.html" htmlEscape="true" />"><i
                     class="icon-th-list"></i> Veterinarians</a></li>
             <li style="width: 135px;"><a href="<spring:url value="/pets/types" htmlEscape="true" />"><i

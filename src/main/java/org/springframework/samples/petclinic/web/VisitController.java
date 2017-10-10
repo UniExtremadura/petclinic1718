@@ -137,5 +137,18 @@ public class VisitController {
         mav.addObject("visits", this.clinicService.findPetById(petId).getVisits());
         return mav;
     }
+    
+    @RequestMapping(value = "/pets/visits/find", method = RequestMethod.GET)
+    public String initFindForm(Map<String, Object> model) {
+    	model.put("visit", new Visit());
+        return "pets/findVisits";
+    }
+    
+    @RequestMapping(value = "/pets/visits", method = RequestMethod.GET)
+    public String processFindForm(Visit visit, BindingResult result, Map<String, Object> model) {
+        Collection<Visit> visits = this.clinicService.findVisits(visit);
+        model.put("visits", visits);
+        return "pets/visitsListComplete";
+    }
 
 }
