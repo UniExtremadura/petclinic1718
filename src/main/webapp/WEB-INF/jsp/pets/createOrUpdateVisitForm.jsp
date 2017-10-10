@@ -118,11 +118,13 @@
 
     <br/>
     <b>Previous Visits</b>
-    <table style="width: 333px;">
+    <table style="width: 733px;">
         <tr>
             <th>Date</th>
             <th>Description</th>
             <th>Veterinarian</th>
+            <th>Diagnosis</th>
+            <th>Treatment</th>
         </tr>
         <c:forEach var="visit" items="${visit.pet.visits}">
             <c:if test="${!visit['new']}">
@@ -130,6 +132,8 @@
                     <td><joda:format value="${visit.date}" pattern="yyyy/MM/dd"/></td>
                     <td><c:out value="${visit.description}"/></td>
                     <td><c:out value="${visit.vet.firstName}"/></td>
+                    <td><c:out value="${visit.diagnosis}"/></td>
+                    <td><c:out value="${visit.treatment}"/></td>
                 </tr>
             </c:if>
         </c:forEach>
