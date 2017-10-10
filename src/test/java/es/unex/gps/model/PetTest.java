@@ -13,6 +13,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetBreed;
+import org.springframework.samples.petclinic.model.PetCharacter;
 import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Visit;
 
@@ -34,7 +35,9 @@ public class PetTest {
 		
 		pet.setWeight(12);
 		pet.setComments("Comentario de prueba");
-		pet.setCharacter("Nervous");		
+		PetCharacter character = new PetCharacter();
+		character.setId(1);
+		pet.setCharacter(character);		
 		pet.setAllergies("eggs");	
 	}
 	
