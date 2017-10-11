@@ -56,6 +56,10 @@ public class Vet extends Person {
     protected void setSpecialtiesInternal(Set<Specialty> specialties) {
         this.specialties = specialties;
     }
+    
+    public void newSetSpecialties() {
+    	this.specialties = new HashSet<Specialty>();
+    }
 
     protected Set<Specialty> getSpecialtiesInternal() {
         if (this.specialties == null) {
@@ -78,6 +82,7 @@ public class Vet extends Person {
     public void addSpecialty(Specialty specialty) {
         getSpecialtiesInternal().add(specialty);
     }
+    
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "vet", fetch = FetchType.EAGER)
     private Set<Visit> visits;

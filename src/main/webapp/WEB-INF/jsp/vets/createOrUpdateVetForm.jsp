@@ -39,15 +39,7 @@
         		<petclinic:inputField label="Last Name" name="lastName"/>
 		    </div>
 		    <div style="float:right; width:50%;">
-		         <c:choose>
-			        <c:when test="${vet['new']}">
-			        	<div class="control-group">
-			           		<petclinic:selectField name="specialties" label="Specialty" names="${specialties}" size="3"/>
-			        	</div>
-			        </c:when>
-			        <c:otherwise>
-		            </c:otherwise>
-		        </c:choose>
+		        <petclinic:selectField name="specialties" label="Specialty" names="${specialties}" size="3"/>
 		    	<petclinic:checkboxField label="House Calls" name="houseCalls"></petclinic:checkboxField>
 		    	<petclinic:inputField label="Telephone" name="telephone"/>
 		    </div>

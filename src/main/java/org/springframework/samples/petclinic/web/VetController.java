@@ -15,7 +15,9 @@
  */
 package org.springframework.samples.petclinic.web;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -96,7 +98,7 @@ public class VetController {
     }
 
     @RequestMapping(value = "/vets/{vetId}/edit", method = RequestMethod.PUT)
-    public String processUpdateVetForm(@PathVariable("vetId") int vetId, @Valid Vet vet, BindingResult result, SessionStatus status) {
+    public String processUpdateVetForm(@PathVariable("vetId") int vetId, @Valid Vet vet, @RequestParam("specialties") String specialty, BindingResult result, SessionStatus status) {
     	new VetValidator().validate(vet, result);
         if (result.hasErrors()) {
             return "vets/createOrUpdateVetForm";
@@ -106,6 +108,14 @@ public class VetController {
         	vetToSave.setLastName(vet.getLastName());
         	vetToSave.setHouseCalls(vet.getHouseCalls());
         	vetToSave.setTelephone(vet.getTelephone());
+        	
+        	vetToSave.newSetSpecialties();
+        	List<String> items = Arrays.asList(specialty.split("\\s*,\\s*"));
+        	for (String string : items) {
+        		vetToSave.addSpecialty(this.clinicService.findSpecialtyByName(string));
+			}
+        	
+    
             this.clinicService.saveVet(vetToSave);
             status.setComplete();
             return "redirect:/vets/{vetId}";
