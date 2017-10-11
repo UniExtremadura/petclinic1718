@@ -115,5 +115,20 @@ public class Vet extends Person {
 	public void setHouseCalls(Boolean houseCalls) {
 		this.houseCalls = houseCalls;
 	}
+	
+	@Column(name = "telephone")
+    protected String telephone;
+
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	
+	
+	
  
 }

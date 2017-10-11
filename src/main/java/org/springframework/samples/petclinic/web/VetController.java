@@ -77,6 +77,7 @@ public class VetController {
     
     @RequestMapping(value = "/vets/new", method = RequestMethod.POST)
     public String processCreationForm(@ModelAttribute("vet") Vet vet,@RequestParam("specialties") String specialty, BindingResult result, SessionStatus status) {
+    	new VetValidator().validate(vet, result);
         if (result.hasErrors()) {
             return "vets/createOrUpdateVetForm";
         } else {
@@ -96,6 +97,7 @@ public class VetController {
 
     @RequestMapping(value = "/vets/{vetId}/edit", method = RequestMethod.PUT)
     public String processUpdateVetForm(@PathVariable("vetId") int vetId, @Valid Vet vet, BindingResult result, SessionStatus status) {
+    	new VetValidator().validate(vet, result);
         if (result.hasErrors()) {
             return "vets/createOrUpdateVetForm";
         } else {
@@ -103,6 +105,7 @@ public class VetController {
         	vetToSave.setFirstName(vet.getFirstName());
         	vetToSave.setLastName(vet.getLastName());
         	vetToSave.setHouseCalls(vet.getHouseCalls());
+        	vetToSave.setTelephone(vet.getTelephone());
             this.clinicService.saveVet(vetToSave);
             status.setComplete();
             return "redirect:/vets/{vetId}";

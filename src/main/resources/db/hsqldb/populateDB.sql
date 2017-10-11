@@ -1,9 +1,9 @@
-INSERT INTO vets VALUES (1, 'James', 'Carter', 0);
-INSERT INTO vets VALUES (2, 'Helen', 'Leary', 0);
-INSERT INTO vets VALUES (3, 'Linda', 'Douglas', 0);
-INSERT INTO vets VALUES (4, 'Rafael', 'Ortega', 1);
-INSERT INTO vets VALUES (5, 'Henry', 'Stevens', 1);
-INSERT INTO vets VALUES (6, 'Sharon', 'Jenkins', 1);
+INSERT INTO vets VALUES (1, 'James', 'Carter', 0, '123123123');
+INSERT INTO vets VALUES (2, 'Helen', 'Leary', 0, '123123123');
+INSERT INTO vets VALUES (3, 'Linda', 'Douglas', 0, '123123123');
+INSERT INTO vets VALUES (4, 'Rafael', 'Ortega', 1, '123123123');
+INSERT INTO vets VALUES (5, 'Henry', 'Stevens', 1, '123123123');
+INSERT INTO vets VALUES (6, 'Sharon', 'Jenkins', 1, '123123123');
 
 INSERT INTO specialties VALUES (1, 'radiology');
 INSERT INTO specialties VALUES (2, 'surgery');
