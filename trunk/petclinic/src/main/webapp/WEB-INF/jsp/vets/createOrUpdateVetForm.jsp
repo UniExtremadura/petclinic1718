@@ -49,6 +49,7 @@
 		            </c:otherwise>
 		        </c:choose>
 		    	<petclinic:checkboxField label="House Calls" name="houseCalls"></petclinic:checkboxField>
+		    	<petclinic:inputField label="Telephone" name="telephone"/>
 		    </div>
 		</div>
        

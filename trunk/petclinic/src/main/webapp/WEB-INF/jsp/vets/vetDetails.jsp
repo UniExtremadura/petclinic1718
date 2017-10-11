@@ -40,6 +40,10 @@
             	<c:if test="${vet.houseCalls}">Yes</c:if></b></td>
         </tr>
         <tr>
+            <th>Telephone</th>
+            <td><c:out value="${vet.telephone}"/></td>
+        </tr>
+        <tr>
             <td>
             	<c:choose>
 	   				<c:when test="${todayVisits != null}">
