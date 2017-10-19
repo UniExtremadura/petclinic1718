@@ -83,7 +83,15 @@ public class VetController {
         if (result.hasErrors()) {
             return "vets/createOrUpdateVetForm";
         } else {
-        	vet.addSpecialty(this.clinicService.findSpecialtyByName(specialty));
+        	
+        	if (specialty!=null && specialty.length()>0) {
+	        	vet.newSetSpecialties();
+	        	List<String> items = Arrays.asList(specialty.split("\\s*,\\s*"));
+	        	for (String string : items) {
+	        		vet.addSpecialty(this.clinicService.findSpecialtyByName(string));
+				}
+        	}
+        	
             this.clinicService.saveVet(vet);
             status.setComplete();
             return "redirect:/vets/" + vet.getId();
@@ -109,11 +117,13 @@ public class VetController {
         	vetToSave.setHouseCalls(vet.getHouseCalls());
         	vetToSave.setTelephone(vet.getTelephone());
         	
-        	vetToSave.newSetSpecialties();
-        	List<String> items = Arrays.asList(specialty.split("\\s*,\\s*"));
-        	for (String string : items) {
-        		vetToSave.addSpecialty(this.clinicService.findSpecialtyByName(string));
-			}
+        	if (specialty!=null && specialty.length()>0) {
+	        	vetToSave.newSetSpecialties();
+	        	List<String> items = Arrays.asList(specialty.split("\\s*,\\s*"));
+	        	for (String string : items) {
+	        		vetToSave.addSpecialty(this.clinicService.findSpecialtyByName(string));
+				}
+        	}
         	
     
             this.clinicService.saveVet(vetToSave);
