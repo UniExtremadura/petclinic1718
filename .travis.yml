@@ -1,0 +1,17 @@
+
+language: java
+sudo: false
+install: true
+addons:
+  sonarcloud:
+    organization: "gps-unex"
+    token:
+      secure: "04c2074e96fc195c57da7df367436a80fcd47810"
+jdk:
+  - oraclejdk8
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
