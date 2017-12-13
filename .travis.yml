@@ -4,9 +4,9 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    organization: "gps-unex"
+    organization: "gps-uex"
     token:
-      secure: "04c2074e96fc195c57da7df367436a80fcd47810"
+      secure: "99e6e32e93adbd7041192838595bffc55f79ad59"
 jdk:
   - oraclejdk8
 script:
